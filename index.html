@@ -1,0 +1,107 @@
+  <html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="js, javascript, web programming">
+<meta name="description" content="Website of Web Programming Project">
+<title>My Final Project Webpage</title>
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+
+<script src="jQuery 3.5.1.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+
+</head>
+
+<body style="background-image:url(bggraph.jpg);">
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#CFC;;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+    <div class="topnav">
+    	<div class="topnavde"><a href="index.html"><b>Top page</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Score</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Animation</b></a></div>
+    </div>
+
+	</header>
+
+	<div class="container" style="height: 600px;">
+    <script>
+     function changeContent1(){
+	    document.getElementById("showContent1").innerHTML =  txtall1;
+    }
+
+     function changebackContent1(){
+	    document.getElementById("showContent1").innerHTML =  txtpart1;
+    }
+
+     var txtall1 = '<p style="text-align:center;">My major is ERP (Enterprise Resource Planning). ERP is a system which manages and integrates a company’s financials, supply chain, operations, commerce, reporting, manufacturing, and human resource activities. <a href="#" onclick="changebackContent1();">...read less</a></p>';
+
+     var txtpart1 = '<p style="text-align:center;">My major is ERP (Enterprise Resource Planning). ERP is a system<a href="#" onclick="changeContent1();">...read more</a></p>';
+    </script>
+
+    <h1 style="margin-top:30px;text-align:center;">Introduction</h1><br/>
+    <p style="text-align:center;"> Hello, my name is Alvin from Indonesia. Nice to know you! </p><br/>
+
+    <h3>My major</h3>
+    <div id="showContent1">
+     <p style="text-align:center;">My major is ERP (Enterprise Resource Planning). ERP is a system
+     <a href="#" onclick="changeContent1();">...read more</a>
+     </p>
+    </div>
+
+
+    <script>
+     function changeContent2(){
+	    document.getElementById("showContent2").innerHTML =  txtall2;
+    }
+
+     function changebackContent2(){
+	    document.getElementById("showContent2").innerHTML =  txtpart2;
+    }
+
+     var txtall2 = '<p style="text-align:center;">I have learned HTML, CSS, and JavaScript. I also learned SAP FI (finance) and SD (sales and distribution) modules. I planned to take MM, PP, and ABAP on next semester. <a href="#" onclick="changebackContent2();">...read less</a></p>';
+
+     var txtpart2 = '<p style="text-align:center;">I have learned HTML, CSS, and JavaScript. I also learned SAP FI (finance)<a href="#" onclick="changeContent2();"> ...read more</a></p>';
+    </script>
+
+    <h3>My knowledge</h3>
+    <div id="showContent2">
+     <p style="text-align:center;">I have learned HTML, CSS, and JavaScript. I also learned SAP FI (finance)
+     <a href="#" onclick="changeContent2();"> ...read more</a>
+     </p>
+    </div>
+
+
+
+	</div>
+
+	<footer>Copyright &copy; 2022 - All Rights Reserved - Alvin Giovano</footer>
+</div>
+</body>
+</html>

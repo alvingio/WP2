@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="js, javascript, web programming">
+<meta name="description" content="Website of Web Programming Project">
+<title>My Final Project Webpage</title>
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+
+<script src="jQuery 3.5.1.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+  });
+</script>
+
+</head>
+
+<body style="background-image:url(bggraph.jpg);">
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#CFC;;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+    <div class="topnav">
+    	<div class="topnavde"><a href="index.html"><b>Top page</b></a></div>
+			<div class="topnavde"><a href="js1.html"><b>Score</b></a></div>
+			<div class="topnavde"><a href="js2.html"><b>Shop</b></a></div>
+			<div class="topnavde"><a href="js3.html"><b>JS World</b></a></div>
+			<div class="topnavde"><a href="js4.html"><b>Form</b></a></div>
+			<div class="topnavde"><a href="js5.html"><b>Map</b></a></div>
+			<div class="topnavde"><a href="js6.html"><b>Animation</b></a></div>
+    </div>
+
+	</header>
+
+	<div class="container" style="height: 600px;">
+    <h2 >The world of JavaScript</h2>
+
+    <h3 style="text-align:center;">　1. Please enter your last name<h3>
+      <form name="lastname" action="jsworld.html" method="post">
+          <input type="text" name="name1" size="20" />
+          <input type="button" value="submit" onclick="choosename()" /> <input type="reset" value="reset"/>
+      </form>
+      <script>
+        function choosename(lastname){
+          if(document.lastname.name1.value==""){
+            alert("Input your name.");
+          }else{
+            var displayname = (document.lastname.name1.value);
+            alert("My name is " + displayname);
+          }
+        }
+      </script>
+
+    <h3 style="text-align:center;">　2. Please input your gender</h3>
+      <form name="mygender" action="jsWorld.html" method="get">
+        <input type="radio" name="gender1" value="Male">Male
+        <input type="radio" name="gender1" value="Female">Female
+        <br/ ><br/ >
+        <input type="button" value="submit" onclick="choosegender()" /> <input type="reset" value="reset"/>
+      </form>
+      <script>
+        function choosegender(mygender){
+        for(var i=0; i<document.mygender.gender1.length; i++){
+        if(document.mygender.gender1[i].checked){
+        alert("I am " + document.mygender.gender1[i].value);
+        return;
+          }
+         }
+        }
+      </script>
+
+    <h3 style="text-align:center;">　3. Please select the languages you can speak</h3>
+      <form name="mylanguage" action="jsWorld.html" method="get">
+        <input type="checkbox" name="language1" value="Japanese">Japanese
+        <input type="checkbox" name="language1" value="English">English
+        <input type="checkbox" name="language1" value="Chinese">Chinese
+        <input type="checkbox" name="language1" value="Others" >Others
+        <br /><br />
+        <input type="button" value="submit" onclick="chooselanguage()" /> <input type="reset" value="reset"/>
+      </form>
+      <script>
+        function chooselanguage(mylanguage){
+        var language = document.forms[0];
+        var txt = "";
+        var i;
+        for(var i=0; i<document.mylanguage.language1.length; i++){
+        if(document.mylanguage.language1[i].checked){
+          txt = txt + document.mylanguage.language1[i].value + " ";
+          }
+        }
+        alert("I can speak " + txt);
+          }
+      </script>
+
+      <h3 style="text-align:center;">　4. Please select your concentration</h3>
+        <select id="mycourse" action="jsWorld.html" method="get">
+          <option value="ERP">ERP</option>
+          <option value="Business Data Analytics" selected="selected">Business Data Analytics</option>
+          <option value="IT Entrepreneurship">IT Entrepreneurship</option>
+          <option value="Web System Development">Web System Development</option>
+          <option value="Network Administration">Network Administration</option>
+          <option value="IT Tourism">IT Tourism</option>
+          <option value="IT Manga Anime">IT Manga Anime</option>
+          <option value="Artificial Intelligence">Artificial Intelligence</option>
+          <br/><br/>
+          <input type="button" value="submit" onclick="choosecourse()" />
+        </select>
+        <script>
+          function choosecourse(mycourse){
+            var select = document.getElementById('mycourse');
+            var value = select.options[select.selectedIndex].value;
+            alert("My concentration is " + value);}
+        </script>
+
+        <h3 style="text-align:center;">　5. Visit KCGI Website</h3>
+        <script>
+          var w = null;
+          function openWindow(){
+          w = open("http://www.kcg.edu", "KCGI", "width=600px, height=400");
+          }
+
+          function closeWindow(){
+          if(w){
+          w.close();
+          w = null;
+            }
+           }
+         </script>
+
+         <input type="button" value="Open the window" onclick="openWindow()" />
+         <input type="button" value="Close the window" onclick="closeWindow()"/>
+
+      <h3 style="text-align:center;">　6. Meet the ghost! (OnClick function)</h3>
+        <img src="photos/ghost.png" name="ghost" width="200px"><br />
+        <p style="text-align:center;">
+        <span onclick=ghost.style.visibility="hidden">Say Goodbye &nbsp;&nbsp;&nbsp;</span>
+        <span onclick=ghost.style.visibility="visible" >Call</span>
+        </p>
+        <p style="text-align:center;">*The ghost is quite shy so they may disappear if you click the button above*</p>
+
+      <h3 style="text-align:center;"> 7. Calm the hamster down! (Mouseover and mouseout)</h3>
+        <img src="photos/cry.png"  style="cursor: pointer;" width="200px" onmouseover="this.src='photos/love.png'" onmouseout="this.src='photos/cry.png'">
+        <p style="text-align:center;"> Pat the hamster with mouse to calm her down! よしよし〜 <p>
+
+      <h3 style="text-align:center;">　8. Greetings! (Change picture function)</h3>
+      <img id="myImage" src="photos/morning.png" style="width:200px"><br/>
+      <button onclick="document.getElementById('myImage').src='photos/morning.png'">Good morning!</button>
+      <button onclick="document.getElementById('myImage').src='photos/afternoon.png'">Good afternoon!</button>
+      <button onclick="document.getElementById('myImage').src='photos/night.png'">Good evening!</button>
+
+
+	</div>
+
+	<footer>Copyright &copy; 2022 - All Rights Reserved - Alvin Giovano</footer>
+</div>
+</body>
+</html>
